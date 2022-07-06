@@ -24,6 +24,8 @@ public class HelloJava {
         System.out.println(findSubMaxSumArray(arr3));
     }
 
+    // Q: given n and k, print an array of length n, that consists only of k distinct
+        // lower case characters
     public static void printNK(int n, int k) {
         int a = 'a';
         int c = 0;
@@ -44,6 +46,7 @@ public class HelloJava {
         System.out.println();
     }
 
+    // Q: return boolean if all alphabet characters (small) are included in string
     public static boolean checkAllAlphabet(String str)
     {
         int a = 'a';
@@ -68,6 +71,7 @@ public class HelloJava {
         return true;
     }
 
+    // Q: return boolean if one string contains the other
     public static boolean stringContains(String all, String sub)
     {
         //return  (all.contains(sub));
@@ -96,6 +100,7 @@ public class HelloJava {
         return false;
     }
 
+    // Q: return largest consecutive adjacent numbers's in array
     public static int findSubMaxSumArray(int[] arr)
     {
         int max = 0;
@@ -130,6 +135,7 @@ public class HelloJava {
         return max;
     }
 
+    // Q: check if there is a loop in list and return boolean
     public static boolean isLoop(NodeInt head)    {
 
         NodeInt pos = head;
@@ -137,14 +143,12 @@ public class HelloJava {
 
         while (pos!=null)
         {
-            if (pos.getNextNode() == null)
-                last = pos;
+            if (pos.getNextNode() == head)
+                return true;
+
+            pos = pos.getNextNode();
         }
 
-        pos = head;
-        while (pos != null)
-            if (pos.getNextNode() != null && pos == last.getNextNode())
-                return true;
         return false;
     }
 }
